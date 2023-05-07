@@ -32,7 +32,7 @@ class GetEventStatsRequest extends FormRequest
             'name' => ['required', 'string','max:255'],
             'date_to' => ['required','date_format:Y-m-d H:i:s'],
             'date_from' => ['required','date_format:Y-m-d H:i:s'],
-            'type' => ['required', Rule::in(Event::$availableAggregation)],
+            'type' => ['required', Rule::in(Event::AVAILABLE_AGGREAGATION)],
         ];
     }
 

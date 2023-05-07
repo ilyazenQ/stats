@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Http\DTO\FilterDTO;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use OpenApi\Annotations as OA;
+
 
 class Event extends Model
 {
@@ -12,7 +14,7 @@ class Event extends Model
 
     protected $fillable = ['name', 'is_auth', 'ip'];
 
-    static array $availableAggregation = [
+    const AVAILABLE_AGGREAGATION = [
         'by_ip',
         'by_auth_status',
         'by_event_name'
