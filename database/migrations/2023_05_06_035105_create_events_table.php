@@ -13,10 +13,15 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable(false);
             $table->boolean('is_auth')->default(false);
             $table->string('ip')->nullable(false);
             $table->timestamps();
+
+            $table->index('name');
+            $table->index('is_auth');
+            $table->index('ip');
+            $table->index('created_at');
         });
     }
 
